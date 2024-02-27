@@ -18,7 +18,7 @@ canvas.height = size * dpr;
 context.scale(dpr, dpr);
 
 context.lineCap = "square";
-context.lineWidth = 10;
+context.lineWidth = 8;
 
 function draw(x, y, width, height) {
   // randomise 50/50 on L/R angle of line
