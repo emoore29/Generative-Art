@@ -34,7 +34,7 @@ for (var i = 0; i < lines.length; i++) {
       context.arc(point.x, point.y, 1, 0, 2 * Math.PI);
       context.stroke();
     } else {
-      if (Math.random() >= 0.64) {
+      if (Math.random() <= 0.64) {
         context.strokeStyle = "rgb(215, 115, 255)";
         context.beginPath();
         context.arc(point.x, point.y, 1, 0, 2 * Math.PI);
