@@ -1,0 +1,28 @@
+body {
+  background: #fff;
+  display: flex;
+  gap: 20px;
+  height: 100vh;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 560px;
+  --blur: 2px;
+}
+
+.frame {
+  box-shadow: -1px 1px 6px 1px rgba(0, 0, 0, 0.24);
+  background: white;
+  align-items: center;
+  display: flex;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+canvas {
+  height: 320px;
+  width: 320px;
+  background-size: cover;
+  background-position: center center;
+}
