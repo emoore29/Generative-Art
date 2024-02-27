@@ -1,4 +1,4 @@
-var canvas = document.getElementById("maze");
+var canvas = document.getElementById("joydiv");
 var context = canvas.getContext("2d");
 
 // Canvas is 320px with CSS styling

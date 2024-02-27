@@ -1,7 +1,6 @@
 body {
   background: #fff;
   display: flex;
-  gap: 20px;
   height: 100vh;
   margin: 0;
   align-items: center;
@@ -9,6 +8,13 @@ body {
   position: relative;
   min-height: 560px;
   --blur: 2px;
+}
+
+#gallery {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 .frame {
