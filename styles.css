@@ -1,5 +1,5 @@
 body {
-  background: #fff;
+  background: #fffefc;
   display: flex;
   height: 100vh;
   margin: 0;
@@ -12,6 +12,7 @@ body {
 
 #gallery {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   align-items: center;
   justify-content: center;

@@ -1,4 +1,4 @@
-var canvas = document.getElementById("loss");
+var canvas = document.getElementById("chance");
 var context = canvas.getContext("2d");
 
 var size = 320;
@@ -26,18 +26,21 @@ for (var i = step; i <= size - step; i += step) {
 // Draw the points
 for (var i = 0; i < lines.length; i++) {
   for (var j = 0; j < lines[i].length; j++) {
-    context.fillStyle = "black";
+    context.strokeStyle = "rgb(176,194,177)";
     var point = lines[i][j];
     var chance = Math.random() <= 0.013;
     if (!chance) {
-      context.fillRect(point.x, point.y, 2, 2);
+      context.beginPath();
+      context.arc(point.x, point.y, 1, 0, 2 * Math.PI);
+      context.stroke();
     } else {
       if (Math.random() >= 0.64) {
-        context.fillStyle = "rgb(215, 115, 255)";
-        context.fillRect(point.x, point.y, 2, 2);
+        context.strokeStyle = "rgb(215, 115, 255)";
+        context.beginPath();
+        context.arc(point.x, point.y, 1, 0, 2 * Math.PI);
+        context.stroke();
       } else {
-        context.fillStyle = "white";
-        context.fillRect(point.x, point.y, 2, 2);
+        // Do nothing
       }
     }
   }
