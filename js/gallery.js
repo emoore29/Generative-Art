@@ -1,4 +1,4 @@
-var canvasNames = ["maze", "chance"];
+var canvasNames = ["maze", "chance", "joydiv"];
 
 // Reference to the container div
 var gallery = document.getElementById("gallery");

@@ -26,7 +26,7 @@ for (var i = step; i <= size - step; i += step) {
 // Draw the points
 for (var i = 0; i < lines.length; i++) {
   for (var j = 0; j < lines[i].length; j++) {
-    context.strokeStyle = "rgb(176,194,177)";
+    context.strokeStyle = "rgb(50,50,50)";
     var point = lines[i][j];
     var chance = Math.random() <= 0.013;
     if (!chance) {
