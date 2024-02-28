@@ -1,16 +1,27 @@
 body {
   background: #fffefc;
   display: flex;
+  flex-direction: column;
   height: 100vh;
   margin: 0;
   align-items: center;
-  justify-content: center;
   position: relative;
   min-height: 560px;
   --blur: 2px;
 }
 
+.header {
+  text-align: center;
+  max-width: 1280px;
+  margin: 40px auto;
+}
+
+.footer {
+  margin-top: auto;
+}
+
 #gallery {
+  max-width: 1280px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
