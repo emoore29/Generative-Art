@@ -44,7 +44,7 @@ for (var i = 0; i < lines.length; i++) {
     } else {
       if (Math.random() <= 0.75) {
         // Survive is dark purple
-        !loss ? (context.fillStyle = "rgb(0,0,0)") : null;
+        !loss ? (context.fillStyle = "rgb(255,255,255)") : null;
         context.fillRect(point.x, point.y, 1, 1);
       } else {
         // If there is a loss, set loss to true for the remainder of the loop.
