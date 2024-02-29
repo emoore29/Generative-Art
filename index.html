@@ -3,24 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Emma Moore | Generative Art</title>
+    <title>Generative Art | Emma Moore</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="header">
       <h1>Generative Art</h1>
       <p>
-        Originally inspired by <a href="">Generative Artistry</a>'s tutorials, I
-        will be adding to this page as I learn to create my own art with code.
+        Originally inspired by
+        <a target="_blank" href="https://generativeartistry.com/tutorials/"
+          >Generative Artistry</a
+        >'s tutorials, I will be adding to this page as I learn to create my own
+        art with code.
       </p>
     </header>
     <div id="gallery"></div>
     <footer class="footer">
-      <p>Created by <a href="https://emmamoore.vercel.app/">Emma Moore</a></p>
+      <p>
+        Created by
+        <a target="_blank" href="https://emmamoore.vercel.app/">Emma Moore</a>
+      </p>
     </footer>
   </body>
-  <script type="text/javascript" src="js/gallery.js"></script>
-  <script type="text/javascript" src="js/maze.js"></script>
-  <script type="text/javascript" src="js/chance.js"></script>
-  <script type="text/javascript" src="js/joydiv.js"></script>
+  <script type="text/javascript">
+    window.canvasScripts = ["maze", "chance", "joydiv"];
+
+    canvasScripts.forEach((filename) => {
+      const script = document.createElement("script");
+      script.src = `canvases/${filename}.js`;
+      document.body.appendChild(script);
+    });
+  </script>
+  <script>
+    // Reference to the container div
+    var gallery = document.getElementById("gallery");
+
+    window.canvasScripts.forEach((filename) => {
+      debugger;
+      // Create frame div
+      var div = document.createElement("div");
+      div.className = "frame";
+
+      var link = document.createElement("a");
+      link.className = "link";
+      link.innerHTML = "Test";
+      link.href = filename;
+
+      // Create canvas with id = canvas name
+      var canvas = document.createElement("canvas");
+      canvas.id = filename;
+
+      // Append canvas to frame div
+      div.appendChild(canvas);
+      div.appendChild(link);
+
+      // Append frame to gallery
+      gallery.appendChild(div);
+    });
+  </script>
 </html>

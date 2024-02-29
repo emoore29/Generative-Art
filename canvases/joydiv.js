@@ -15,13 +15,13 @@ var lines = [];
 for (var i = step; i <= size - step; i += step) {
   var line = [];
   for (var j = step; j <= size - step; j += step) {
-    // Focus y random towards center
-    var distanceToCenter = Math.abs(j - size / 2);
-    var variance = Math.max(size / 2 - 50 - distanceToCenter, 0);
-    var random = ((Math.random() * variance) / 2) * -1;
-    var point = { x: j, y: i + random };
+    var distanceToCenter = Math.abs(j - size / 2); // calc how far current vertical position is from center
+    var variance = Math.max(size / 2 - 50 - distanceToCenter, 0); // size/2 = center. 50 const. 0 means if first calc < 0, math.max chooses 0.
+    var random = (Math.random() * variance) / 2;
+    var point = { x: j, y: i - random };
     line.push(point);
   }
+  console.log("line", line); // e.g. [ {x: 10, y: 290} ... {x: 10, y: 268.2}, {x: 10, y: 283.5}, {x: 10, y: 240.23} ... {x: 10, y: 290} ]
   lines.push(line);
 }
 
