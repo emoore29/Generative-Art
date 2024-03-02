@@ -9,14 +9,6 @@
   <body>
     <header class="header">
       <h1>Generative Art</h1>
-      <p>
-        Originally inspired by
-        <a target="_blank" href="https://generativeartistry.com/tutorials/"
-          >Generative Artistry</a
-        >'s tutorials, I will be adding to this page as I learn to create my own
-        art with code.
-      </p>
-      <button onClick="window.location.reload();">Refresh Page</button>
     </header>
     <div id="gallery"></div>
     <footer class="footer">
@@ -28,46 +20,50 @@
   </body>
   <script type="text/javascript">
     // update array when a new canvas is added
-    window.canvasScripts = ["maze", "chance", "joydiv"];
+    window.canvasScripts = [
+      { maze: "Maze" },
+      { joydiv: "Joy Division" },
+      { chance: "Chance" },
+    ];
 
     function addScripts() {
       // add script elements for each canvas script in the array
-      canvasScripts.forEach((filename) => {
+      canvasScripts.forEach((file) => {
+        const scriptName = Object.keys(file)[0]; // Get the filename key
         const script = document.createElement("script");
-        script.src = `art/${filename}/${filename}.js`;
+        script.src = `art/${scriptName}/${scriptName}.js`;
         document.body.appendChild(script);
       });
     }
 
     addScripts();
-
-    function reloadScripts() {
-      // remove existing gallery canvases
-      const gallery = document.getElementById("gallery");
-      gallery.innerHTML = "";
-
-      addScripts();
-    }
   </script>
   <script>
     // Reference to the container div
     var gallery = document.getElementById("gallery");
 
-    window.canvasScripts.forEach((filename) => {
+    window.canvasScripts.forEach((file) => {
+      const scriptName = Object.keys(file)[0]; // Get the filename key
+
       // Create frame div
       var div = document.createElement("div");
       div.className = "frame";
 
+      // Link to details page
       var link = document.createElement("a");
       link.className = "link";
-      link.innerHTML = "Test";
-      link.href = `art/${filename}/${filename}.html`;
+      link.innerHTML = file[scriptName];
+      link.href = `art/${scriptName}/${scriptName}.html`;
+
+      // Rerun script button
+      var refreshBtn = document.createElement("button");
+      refreshBtn.className = "refreshBtn";
 
       // Create canvas with id = canvas name
       var canvas = document.createElement("canvas");
-      canvas.id = filename;
+      canvas.id = scriptName;
 
-      // Append canvas to frame div
+      // Append canvas and link to frame
       div.appendChild(canvas);
       div.appendChild(link);
 
