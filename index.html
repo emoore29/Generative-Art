@@ -20,11 +20,7 @@
   </body>
   <script type="text/javascript">
     // update array when a new canvas is added
-    window.canvasScripts = [
-      { maze: "Maze" },
-      { joydiv: "Joy Division" },
-      { chance: "Chance" },
-    ];
+    window.canvasScripts = [{ maze: "Maze" }, { joydiv: "Joy Division" }];
 
     function addScripts() {
       // add script elements for each canvas script in the array
@@ -66,6 +62,7 @@
       // Append canvas and link to frame
       div.appendChild(canvas);
       div.appendChild(link);
+      div.appendChild(refreshBtn);
 
       // Append frame to gallery
       gallery.appendChild(div);
