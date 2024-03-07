@@ -51,10 +51,6 @@
       link.innerHTML = file[scriptName];
       link.href = `art/${scriptName}/${scriptName}.html`;
 
-      // Rerun script button
-      var refreshBtn = document.createElement("button");
-      refreshBtn.className = "refreshBtn";
-
       // Create canvas with id = canvas name
       var canvas = document.createElement("canvas");
       canvas.id = scriptName;
@@ -62,7 +58,6 @@
       // Append canvas and link to frame
       div.appendChild(canvas);
       div.appendChild(link);
-      div.appendChild(refreshBtn);
 
       // Append frame to gallery
       gallery.appendChild(div);

@@ -77,3 +77,14 @@ canvas {
   max-width: 1280px;
   flex-wrap: wrap;
 }
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.code {
+  max-width: 320px;
+  margin: auto;
+}

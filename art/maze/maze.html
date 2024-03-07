@@ -14,8 +14,58 @@
       <h2 class="art-title">Maze</h2>
       <div class="art-details">
         <div class="frame"><canvas id="maze"></canvas></div>
-        <div>
-          <p>Test</p>
+        <div class="description">
+          <p>
+            This is based on Generative Artistry's
+            <a
+              href="https://generativeartistry.com/tutorials/tiled-lines/"
+              target="_blank"
+              >tiled lines tutorial</a
+            >. This is my first time using HTML's canvas tag and first
+            introduction to generative art. I recommend reading through the
+            tutorial to best understand how this works, but I'll write my own
+            explanation below to try to consolidate my own understanding.
+          </p>
+          <img
+            class="code"
+            src="./canvas context.PNG"
+            alt="Code for getting the canvas context."
+          />
+          <p>
+            There is some initial code that sets up the canvas size and scale.
+            I've given my canvas an id of "maze", so first we can store that in
+            a variable named "canvas".
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLCanvasElement/getContext"
+              target="_blank"
+              >HTMLCanvasElement.getContext()</a
+            >
+            returns a drawing context on the canvas. d" creates a
+            CanvasRenderingContext2D object representing a two-dimensional
+            rendering context, provides access to a bunch of methods via the
+            CanvasRenderingContext2D prototype. This includes methods such as
+            moveTo(), lineTo(), and stroke(), which are used for this tutorial.
+          </p>
+          <img
+            class="code"
+            src="./canvas setup.PNG"
+            alt="Code for getting the canvas context."
+          />
+          <p>
+            To understand the above code, I think it's best to outline some
+            technical terminology.
+          </p>
+          <ul>
+            <li>
+              <em>Logical pixels</em>: These are also referred to as CSS pixels.
+              On most screens, one logical pixel corresponds to one physical
+              pixel, however, some high-density screens use multiple physical
+              pixels to represent a single logical pixel.
+            </li>
+            <li><em>Physical pixels</em></li>
+            <li><em>PPI</em></li>
+            <li><em>Resolution</em></li>
+          </ul>
         </div>
       </div>
     </section>
