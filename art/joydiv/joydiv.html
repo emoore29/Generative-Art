@@ -70,6 +70,42 @@
             src="./drawinglines.PNG"
             alt="Code to draw the lines."
           />
+          <p>
+            Again, we use a for loop, and here we're looping through each line
+            in the lines array, starting at the fifth line to leave a gap at the
+            top of the canvas.
+          </p>
+          <p>
+            context.beginPath() starts a new path for every loop. We also move
+            to the first point in the next line at the start of each loop.
+          </p>
+          <p>
+            Next, we create another loop, this time to loop through each point
+            in the line we're currently on in the primary loop. For each point,
+            we're creating a quadratic curve. quadraticCurveTo() requires the x
+            and y coordinates of a control point, which determines the shape of
+            the curve, and the x and y coordinates of the end point.
+          </p>
+          <p>
+            This gets difficult to understand given that we're looping through
+            so many things. Let's look at the first line we see (the 6th line in
+            the lines array) Here's a screenshot of the array of all the points
+            in this line. We're going to look at point 10.
+          </p>
+          <img src="./control points.PNG" alt="First line control points" />
+          <p>
+            The red dot indicates the control point, and the blue dot indicates
+            a point on the line. In the image, the blue dot isn't perfectly on
+            the line, and this is because as we're creating quadratic curves,
+            the drawn line is curving away from the specific point listed in the
+            array.
+          </p>
+          <p>
+            In the calculation, the x control point is a point halfway between
+            the current point's x value and the next consecutive point's x
+            value. The y control point is a point halfway between the current
+            point's y value and the next consecutive point's y value.
+          </p>
         </div>
       </div>
     </section>

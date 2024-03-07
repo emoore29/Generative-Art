@@ -31,21 +31,16 @@ for (var i = step; i <= size - step; i += step) {
   lines.push(line);
 }
 
-console.log(lines);
-// size/2 = center. 50 const. 0 means if first calc < 0, math.max chooses 0.
-// e.g. [ {x: 10, y: 290} ... {x: 10, y: 268.2}, {x: 10, y: 283.5}, {x: 10, y: 240.23} ... {x: 10, y: 290} ]
-
 // Draw lines, starting @ 5 to skip a few top lines
 for (var i = 5; i < lines.length; i++) {
   context.beginPath();
   context.moveTo(lines[i][0].x, lines[i][0].y);
 
   for (var j = 0; j < lines[i].length - 2; j++) {
-    var xc = (lines[i][j].x + lines[i][j + 1].x) / 2;
-    var yc = (lines[i][j].y + lines[i][j + 1].y) / 2;
-    context.quadraticCurveTo(lines[i][j].x, lines[i][j].y, xc, yc);
+    var xc = (lines[i][j].x + lines[i][j + 1].x) / 2; // 110 + 120 / 2 = 230/2 = 115
+    var yc = (lines[i][j].y + lines[i][j + 1].y) / 2; // 98.47 + 84.55 / 2 = 91.51
+    context.quadraticCurveTo(lines[i][j].x, lines[i][j].y, xc, yc); // 110, 98.47, 115, 91.51
   }
-
   context.quadraticCurveTo(
     lines[i][j].x,
     lines[i][j].y,
