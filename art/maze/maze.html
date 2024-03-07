@@ -21,7 +21,8 @@
               href="https://generativeartistry.com/tutorials/tiled-lines/"
               target="_blank"
               >tiled lines tutorial</a
-            >. This is my first time using HTML's canvas tag and first
+            >; however, I made some adjustments to the canvas size and line
+            width. This is my first time using HTML's canvas tag and first
             introduction to generative art. I recommend reading through the
             tutorial to best understand how this works, but I'll write my own
             explanation below to try to consolidate my own understanding.
@@ -40,7 +41,7 @@
               target="_blank"
               >HTMLCanvasElement.getContext()</a
             >
-            returns a drawing context on the canvas. d" creates a
+            returns a drawing context on the canvas. This creates a
             CanvasRenderingContext2D object representing a two-dimensional
             rendering context, provides access to a bunch of methods via the
             CanvasRenderingContext2D prototype. This includes methods such as
@@ -52,20 +53,80 @@
             alt="Code for getting the canvas context."
           />
           <p>
-            To understand the above code, I think it's best to outline some
+            To understand the above code, I think it's helpful to outline some
             technical terminology.
           </p>
           <ul>
             <li>
               <em>Logical pixels</em>: These are also referred to as CSS pixels.
-              On most screens, one logical pixel corresponds to one physical
-              pixel, however, some high-density screens use multiple physical
-              pixels to represent a single logical pixel.
+              They don't have any inherent physical dimensions. On most screens,
+              one logical pixel corresponds to one physical pixel; however, some
+              high-density screens use multiple physical pixels to represent a
+              single logical pixel.
             </li>
-            <li><em>Physical pixels</em></li>
-            <li><em>PPI</em></li>
-            <li><em>Resolution</em></li>
+            <li>
+              <em>Physical pixels</em>: These are the actual physical pixels on
+              a given device. As above, one or more physical pixels might make
+              up a logical pixel.
+            </li>
+            <li>
+              <em>PPI</em>: Pixels per inch measures the
+              <strong>pixel density</strong> on an electronic device.
+            </li>
+            <li>
+              <em>DPR</em>: Device pixel ratio is the ratio between the
+              <strong>physical pixel density</strong> of a device and its
+              <strong>logical pixel density</strong>. The higher the DPR, the
+              more physical pixels representing logical pixels.
+            </li>
+
+            <li>
+              <em>Screen resolution</em>: This is the number of
+              <strong>physical pixels</strong> in the display, typically quoted
+              as width x height.
+            </li>
+            <li>
+              <em>Viewport resolution</em>: This is the number of
+              <strong>logical pixels</strong> in the display, typically quoted
+              as width x height.
+            </li>
           </ul>
+
+          <p>
+            So with the above terminology in mind, multiplying size and DPR
+            gives us the actual canvas width and height in physical pixels,
+            rather than the 320 logical CSS pixels.
+          </p>
+          <p>
+            By default, one unit on a canvas is one pixel. Scaling based on DPR
+            will then adjust the units based on the DPR, so one unit will be one
+            physical pixel.
+          </p>
+          <h3>Examples</h3>
+          <p>
+            In the original tutorial, the size is given by the window inner
+            width, but I found this results in a very different appearance of
+            the maze on mobile vs desktop, so I chose to use the fixed size of
+            320 to match the logical CSS pixels. If you look at their CodePen,
+            they've actually done the same there.
+          </p>
+          <p>
+            On my desktop monitor, the DPR is 1. The size is 320. So my canvas
+            width and height are 320 physical pixels. One unit in the canvas
+            will be one physical pixel.
+          </p>
+          <p>
+            On my mobile, the DPR is 2.73. The size is 320. So my canvas width
+            and height are approximately 874 physical pixels. One unit in the
+            canvas will be 2.73 physical pixels.
+          </p>
+          <h3>Drawing</h3>
+          <p>Finally, we can look at the code that draws the maze.</p>
+          <img
+            class="code"
+            src="./Drawing.PNG"
+            alt="Code that draws the maze on the canvas."
+          />
         </div>
       </div>
     </section>

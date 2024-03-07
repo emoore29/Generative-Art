@@ -1,8 +1,7 @@
 var canvas = document.getElementById("maze");
 var context = canvas.getContext("2d");
 
-var size = window.innerWidth;
-var step = 60;
+var size = 320;
 var dpr = window.devicePixelRatio;
 
 canvas.width = size * dpr;
@@ -11,7 +10,9 @@ canvas.height = size * dpr;
 context.scale(dpr, dpr);
 
 context.lineCap = "square";
-context.lineWidth = 8;
+context.lineWidth = 1;
+
+var step = 15;
 
 function draw(x, y, width, height) {
   var leftToRight = Math.random() >= 0.5;
@@ -34,5 +35,6 @@ for (var x = 0; x < size; x += step) {
 }
 
 console.log("dpr", dpr);
-console.log("canvas width", size * dpr);
 console.log("size", size);
+console.log("canvas width", size * dpr);
+console.log("size 2", size);
