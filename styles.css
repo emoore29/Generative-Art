@@ -1,5 +1,5 @@
 body {
-  background: #fffefc;
+  background: #f3f6f3;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -7,12 +7,18 @@ body {
   align-items: center;
   position: relative;
   min-height: 560px;
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .header {
   text-align: center;
   max-width: 1280px;
   margin: 40px auto;
+}
+
+#heading {
+  text-decoration: none;
+  color: black;
 }
 
 .footer {
@@ -29,7 +35,7 @@ body {
 }
 
 .frame {
-  box-shadow: -1px 1px 6px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: -1px 1px 6px 1px rgba(11, 18, 14, 0.24);
   background: white;
   align-items: center;
   display: flex;
@@ -59,7 +65,7 @@ canvas {
   display: flex;
   justify-content: center;
   gap: 40px;
-  max-width: 1280px;
+  max-width: 900px;
   flex-wrap: wrap;
 }
 
