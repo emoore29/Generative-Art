@@ -127,6 +127,21 @@
             src="./Drawing.PNG"
             alt="Code that draws the maze on the canvas."
           />
+          <p>
+            The draw function takes x, y, width, and height, which are used to
+            define the start and end points of the line. context.stroke() then
+            draws a stroke between those two points. In the draw() function,
+            there's a 50% chance that the line starts at x, y, or x + width, y,
+            and the rest is pretty self-explanatory.
+          </p>
+          <p>
+            Then, in a for loop, we loop through y values and run draw each
+            time, incrementing y by 15 each loop. Then we loop through the x
+            values. So essentially, we're drawing the strokes in columns that
+            are 15 logical pixels wide from top to bottom, starting at x = 0 and
+            incrementing +15 each time, up to 320. Each diagonal line is in the
+            middle of a 15 x 15 square.
+          </p>
         </div>
       </div>
     </section>
