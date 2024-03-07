@@ -20,8 +20,56 @@
       <h2 class="art-title">Joy Division</h2>
       <div class="art-details">
         <div class="frame"><canvas id="joydiv"></canvas></div>
-        <div>
-          <p>Explanation WIP.</p>
+        <div class="description">
+          <p>
+            For an explanation of the canvas setup, see my
+            <a href="../maze/maze.html">maze explanation</a>.
+          </p>
+          <p>
+            We start with an empty array named lines, and in this array we're
+            going to push a bunch of points.
+          </p>
+          <img
+            class="code"
+            src="./linepoints.PNG"
+            alt="For loop that creates the lines array."
+          />
+          <p>
+            Since our size is 320 and our step is 10, the loop runs 32 times.
+            <strong>var line</strong> represents a horizontal line made up of
+            points. Each point on the same line has an x value incremented by
+            10, and a relatively constant y value that starts to vary when the
+            line is closer to the middle of the canvas.
+          </p>
+          <p>
+            Let's look at the second line from the top: i == 20. Here's the line
+            array:
+          </p>
+          <img
+            class="code"
+            src="./lineexample.PNG"
+            alt="Line array containing points making up one line."
+          />
+          <h3>Variance calculation</h3>
+          <p>
+            Without the variance calculation, the line would be a simple flat
+            line, with x points incrementing by 10 and y == 20. Firstly, the
+            distance of the point from the center of the canvas is calculated
+            (e.g., x == 60, distanceToCenter == 100). Then, the multiplier is
+            calculated. The further the point is from the center, the smaller
+            the multiplier will be. If the calculation result is negative,
+            Math.max() will choose 0 as the multiplier, and there will be no
+            variation. Finally, a random value is generated that will be
+            subtracted from the y value of the current point, to create the
+            variation seen in the line points seen in the above array. We
+            continue to loop until we've generated 31 lines.
+          </p>
+          <h3>Drawing the lines</h3>
+          <img
+            class="code"
+            src="./drawinglines.PNG"
+            alt="Code to draw the lines."
+          />
         </div>
       </div>
     </section>
